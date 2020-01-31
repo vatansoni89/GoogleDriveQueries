@@ -1,0 +1,15 @@
+1. Get live files for specific folder:
+
+1.a: https://developers.google.com/drive/api/v3/reference/files/list?apix=true&apix_params=%7B%22corpora%22%3A%22allDrives%22%2C%22includeItemsFromAllDrives%22%3Atrue%2C%22pageSize%22%3A1000%2C%22q%22%3A%22parents%20%3D%20%271gnKfd_Js_Ry2IsLp5Q5gHINHf4emcyOr%27%20and%20trashed%20%3D%20false%22%2C%22supportsAllDrives%22%3Atrue%2C%22fields%22%3A%22files(id%2Cname%2Ctrashed%2CmodifiedTime%2Cparents)%22%7D
+curl \
+  'https://www.googleapis.com/drive/v3/files?corpora=allDrives&includeItemsFromAllDrives=true&pageSize=1000&q=parents%20%3D%20%271gnKfd_Js_Ry2IsLp5Q5gHINHf4emcyOr%27%20and%20trashed%20%3D%20false&supportsAllDrives=true&fields=files(id%2Cname%2Ctrashed%2CmodifiedTime%2Cparents)&key=[YOUR_API_KEY]' \
+  --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+  --header 'Accept: application/json' \
+  --compressed
+  
+ 1.b: https://www.googleapis.com/drive/v3/files?q=parents%20%3D%20'1gnKfd_Js_Ry2IsLp5Q5gHINHf4emcyOr'%20and%20trashed%20%3D%20false&fields=files(id%2Cname%2Ctrashed%2CmodifiedTime%2Cparents)
+ 
+ curl --location --request GET 'https://www.googleapis.com/drive/v3/files?q=parents%20%3D%20%271gnKfd_Js_Ry2IsLp5Q5gHINHf4emcyOr%27%20and%20trashed%20%3D%20false&fields=files%28id%2Cname%2Ctrashed%2CmodifiedTime%2Cparents%29' \
+--header 'Authorization: Bearer ya29.Il-8ByuSi3rBG_a04jlvIqqRqb-mxj_yl4emXyPXVCoJ1Fy-QsN0p7fhjvH0r2Z8YEiN8Z3YCPeCGvVKBPDBQjQMjxI4AenMr1pFMYZkJsFZtyqsKRnAP40zAY5-a8bUPg' \
+--header 'Accept: application/json'
+  
